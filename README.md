@@ -73,3 +73,35 @@ angle 값을 -20, 0, 20 세 값으로만 처리하도록 해줬다.
 
 키보드 입력 2->점 찍은 이미지 확인하는 파있너 파일 실행
 
+# exposure 조절하기
+
+시각적으로 cam exposure 값 조정하기
+
+- Use OpenCV
+- Python
+
+
+## 6. Control Cam Exposure
+캠 영상을 불러와서 exposure 값을 조절하는 코드다.
+exposure 값을 조정한 후 launch 파일에 해당 exposure 값을 저장할 수 있다.
+
+- [Cam Exposure](https://github.com/hyejeong99/cotrol_exposure) - Control Cam Exposure
+
+### 코드 설명
+캠 영상을 불러와서 exposure 값을 조절하는 코드다. 
+이 코드는, 시각적으로 영상의 exposure를 확인할 수 있다. 또한, 영상에 그려져있는 다각형으로 exposure 값을 조정할 수도 있다.
+
+●exposure 텍스트
+:현재 exposure 값이 얼마인지 나타내는 부분이다.
+
+●up&down 사각형
+:클릭해 exposure 값을 높이거나/낮출 수 있는 부분이다.
+
+●exit 사각형
+:클릭해 창을 닫을 수 있는 부분이다.
+
+●save 원
+:클릭해 launch 파일 선택 후, 해당 lanch 파일의 exposure값을 조정한 값으로 저장해주는 부분이다.
+
+![최종본](https://user-images.githubusercontent.com/59854960/113079141-75981d00-920f-11eb-9615-3cae8089f2a5.png)\
+
