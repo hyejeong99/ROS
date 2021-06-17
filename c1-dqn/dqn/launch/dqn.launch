@@ -1,0 +1,3 @@
+<launch>
+    <node name="dqn" pkg="dqn" type="dqn.py" output="screen" />
+</launch>

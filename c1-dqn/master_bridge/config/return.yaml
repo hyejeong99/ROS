@@ -1,0 +1,17 @@
+
+foreign_ip: 192.168.5.6
+foreign_port: 11311
+
+connectCheck_Hz: 500
+msgsFrequency_Hz: 20
+
+pub_queue_size: 1
+pub_name: master_bridge_rtn
+
+TopicList: [scan, tf, tf_static, vesc/odom, vesc/high_level/ackermann_cmd_mux/input/nav_0 ]
+TfList: [
+    {to: base_link, from: map},
+    {to: laser, from: base_link},
+    {to: odom, from: base_link}
+]
+

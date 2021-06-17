@@ -1,0 +1,17 @@
+
+foreign_ip: 192.168.5.4
+foreign_port: 11311
+
+connectCheck_Hz: 500
+msgsFrequency_Hz: 20
+
+#namespace: relay
+pub_queue_size: 1
+pub_name: master_bridge_viewer
+ 
+TopicList: [ xycar_sensor ]
+#TfList: [
+#    {to: base_link, from: map},
+#    {to: laser, from: base_link},
+#    {to: odom, from: base_link}
+#]

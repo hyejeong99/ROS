@@ -1,0 +1,7 @@
+<launch>
+    <node name="master_bridge_host" pkg="master_bridge" type="master_bridge" output="screen">
+        <rosparam command="load" file="$(find master_bridge)/config/config.yaml" />
+    </node>
+    <node name="mNode1" pkg="my_node" type="mNode.py" output="screen" />
+    <node name="yolo" pkg="yolo" type="yolo.py" output="screen" />
+</launch>

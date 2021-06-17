@@ -1,0 +1,9 @@
+init_position_x : 
+  - 1100
+  - 0
+init_position_y : 
+  - 650
+  - 0
+init_yaw :
+  - 90
+  - 270

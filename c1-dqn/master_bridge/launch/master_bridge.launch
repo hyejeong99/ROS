@@ -1,0 +1,5 @@
+<launch>
+    <node name="master_bridge_motor" pkg="master_bridge" type="master_bridge" output="screen">
+        <rosparam command="load" file="$(find master_bridge)/config/config.yaml" />
+    </node>
+</launch>
