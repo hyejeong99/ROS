@@ -1,0 +1,43 @@
+<launch>
+
+
+  <arg name="camera_topic" default="usb_cam/image_raw/compressed" />
+  <arg name="imu_topic" default="/imu" />
+  <arg name="sonic_topic" default="xycar_ultrasonic" />
+
+  <!-- xycar_c1 -->
+  <node name="xycar_motor_c1" pkg="xycar_motor" type="xycar_motor_c1.py" output="screen" >
+    <param name="angle_offset" value="0" />
+  </node>
+
+  <node name="master_bridge" pkg="master_bridge" type="master_bridge" output="screen">
+      <rosparam command="load" file="$(find master_bridge)/config/config.yaml" />
+  </node>
+
+  <!-- usb_cam -->
+  <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+    <param name="video_device" value="/dev/video0" />
+    <param name="image_width" value="320" />
+    <param name="image_height" value="240" />
+    <param name="pixel_format" value="yuyv" />
+    <param name="camera_frame_id" value="usb_cam" />
+    <param name="io_method" value="mmap"/>
+  </node>
+
+  <!-- ultra_sonic -->
+  <node pkg="xycar_ultrasonic" type="xycar_ultrasonic.py" name="xycar_ultrasonic" output="screen" />
+
+  <!--node pkg="xycar_imu" type="6dof_imu_node.py" name="xycar_imu" output="screen">
+    <param name="rviz_mode" type="string" value="false" />
+  </node-->
+
+  <!-- xycar_message -->
+  <node name="xycar_info_pub" pkg="xycar_sensor" type="info_message.py" output="screen">
+    <param name="car_num" value="1"/>
+    <param name="freq" value="10"/>
+    <param name="camera_topic" value="$(arg camera_topic)" />
+    <param name="imu_topic" value="$(arg imu_topic)" />
+    <param name="sonic_topic" value="$(arg sonic_topic)" />
+  </node>
+
+</launch>
