@@ -49,6 +49,7 @@ xycar X 시리즈를 사용해 왼쪽 차선에서 출발한 차가 n초 후 차
 
 ## 3. 데이터 받아서 dqn 처리하기
 #### ultra_sonic 데이터를 이용해 dqn 처리하기
+#### 사용 파일 : c1-dqn&window
 
 c1에서 xycar_sensor라는 토픽명으로 메세지를 보내준다. 
 윈도우에서 이를 sub해서 메세지별로 나눠준다. 
@@ -58,6 +59,8 @@ angle 값을 -20, 0, 20 세 값으로만 처리하도록 해줬다.
 
 ## 4. 데이터 받아서 yolo 처리하기
 #### image_raw데이터를 이용해 dqn 처리하기
+#### 사용 파일 : c1-yolo&window
+
 ①xycar 캠 영상을 가져오는 "/usb_cam/image_raw"를 sub한다.
 
 ②xycar c1에서 "xycar_sensor_info"라는 토픽명으로 pub해준다. 여기에는 받아온 캠영상이 담겨져 있다.
